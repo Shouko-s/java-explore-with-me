@@ -34,14 +34,12 @@ class StatsControllerTest {
 
     @Test
     void postHit_validDto_returnsOkAndCallsService() throws Exception {
-        String json = """
-            {
-              "app": "ewm-service",
-              "uri": "/events/1",
-              "ip": "127.0.0.1",
-              "timestamp": "2023-08-01 12:00:00"
-            }
-            """;
+        String json = "{\n" +
+            "  \"app\": \"ewm-service\",\n" +
+            "  \"uri\": \"/events/1\",\n" +
+            "  \"ip\": \"127.0.0.1\",\n" +
+            "  \"timestamp\": \"2023-08-01 12:00:00\"\n" +
+            "}";
 
         mockMvc.perform(post("/hit")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -53,12 +51,10 @@ class StatsControllerTest {
 
     @Test
     void postHit_invalidDto_missingRequiredFields_returnsBadRequest() throws Exception {
-        String json = """
-            {
-              "uri": "/events/1",
-              "ip": "127.0.0.1"
-            }
-            """;
+        String json = "{\n" +
+            "  \"uri\": \"/events/1\",\n" +
+            "  \"ip\": \"127.0.0.1\"\n" +
+            "}";
 
         mockMvc.perform(post("/hit")
                 .contentType(MediaType.APPLICATION_JSON)
