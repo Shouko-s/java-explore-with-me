@@ -1,6 +1,7 @@
 package ru.practicum.statsclient.client;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,7 +23,8 @@ public class StatsClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    private String baseUrl = "http://localhost:9090";
+    @Value("${stats.base-url}")
+    private String baseUrl;
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
