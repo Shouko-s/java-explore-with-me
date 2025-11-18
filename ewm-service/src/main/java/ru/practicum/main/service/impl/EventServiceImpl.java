@@ -22,7 +22,7 @@ import ru.practicum.main.service.UserService;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static ru.practicum.main.common.constants.formatter;
+import static ru.practicum.main.common.constants.FORMATTER;
 
 @Service
 @RequiredArgsConstructor
@@ -184,7 +184,7 @@ public class EventServiceImpl implements EventService {
             return null;
         }
 
-        LocalDateTime newEventDate = LocalDateTime.parse(dto.getEventDate(), formatter);
+        LocalDateTime newEventDate = LocalDateTime.parse(dto.getEventDate(), FORMATTER);
 
         if (newEventDate.isBefore(LocalDateTime.now())) {
             throw new BadRequestException("Дата события не может быть в прошлом");
@@ -199,7 +199,7 @@ public class EventServiceImpl implements EventService {
             return;
         }
 
-        LocalDateTime newEventDate = LocalDateTime.parse(dto.getEventDate(), formatter);
+        LocalDateTime newEventDate = LocalDateTime.parse(dto.getEventDate(), FORMATTER);
 
         if (newEventDate.isBefore(LocalDateTime.now().plusHours(2))) {
             throw new BadRequestException(

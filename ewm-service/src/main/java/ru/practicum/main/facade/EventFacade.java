@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static ru.practicum.main.common.constants.formatter;
+import static ru.practicum.main.common.constants.FORMATTER;
 
 @Component
 @RequiredArgsConstructor
@@ -105,7 +105,7 @@ public class EventFacade {
             .app(appName)
             .uri(request.getRequestURI())
             .ip(extractClientIp(request))
-            .timestamp(now.format(formatter))
+            .timestamp(now.format(FORMATTER))
             .build());
 
         List<EventResponseShortDto> events = getEvents(
@@ -148,7 +148,7 @@ public class EventFacade {
             .app(appName)
             .uri(uri)
             .ip(ip)
-            .timestamp(now.format(formatter))
+            .timestamp(now.format(FORMATTER))
             .build());
 
         EventResponseDto dto = findByIdAndState(id, State.PUBLISHED);
