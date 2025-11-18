@@ -3,6 +3,7 @@ package ru.practicum.statsserver.controller;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.statsdto.request.EndpointHitRequestDto;
 import ru.practicum.statsdto.response.ViewStatsResponseDto;
@@ -16,6 +17,7 @@ public class StatsController {
     private final EndpointHitService service;
 
     @PostMapping("/hit")
+    @ResponseStatus(HttpStatus.CREATED)
     public void hit(@RequestBody @Valid EndpointHitRequestDto dto) {
         service.hit(dto);
     }
