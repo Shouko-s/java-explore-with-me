@@ -44,7 +44,7 @@ class StatsControllerTest {
         mockMvc.perform(post("/hit")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
-            .andExpect(status().isOk());
+            .andExpect(status().isCreated());
 
         verify(service, times(1)).hit(any(EndpointHitRequestDto.class));
     }
