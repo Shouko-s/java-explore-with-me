@@ -22,7 +22,7 @@ import ru.practicum.main.service.UserService;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static ru.practicum.main.common.constants.FORMATTER;
+import static ru.practicum.main.common.Constants.FORMATTER;
 
 @Service
 @RequiredArgsConstructor

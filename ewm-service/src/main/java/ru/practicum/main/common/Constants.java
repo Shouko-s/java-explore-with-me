@@ -2,6 +2,6 @@ package ru.practicum.main.common;
 
 import java.time.format.DateTimeFormatter;
 
-public class constants {
+public class Constants {
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 }

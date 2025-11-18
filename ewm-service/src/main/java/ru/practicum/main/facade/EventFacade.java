@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static ru.practicum.main.common.constants.FORMATTER;
+import static ru.practicum.main.common.Constants.FORMATTER;
 
 @Component
 @RequiredArgsConstructor
